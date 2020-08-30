@@ -94,7 +94,7 @@ Wire Wire Line
 NoConn ~ 6850 4000
 NoConn ~ 6850 3800
 $Comp
-L EnvironmentSensorTests-rescue:SSD1306_128x64_OLED-Sensors A4
+L EnvironmentSensorTests-rescue:SSD1306_128x64_OLED-Sensors-EnvironmentSensorTests-rescue A4
 U 1 1 5F49AE1E
 P 7850 3850
 F 0 "A4" H 7750 4100 50  0000 L CNN
@@ -147,7 +147,7 @@ The purpose of this circuit is to allow a comparison of the humidty and temperat
 NoConn ~ 6100 3950
 NoConn ~ 6100 4050
 $Comp
-L EnvironmentSensorTests-rescue:AdaFruit_ADT7410_Board-Sensors A3
+L EnvironmentSensorTests-rescue:AdaFruit_ADT7410_Board-Sensors-EnvironmentSensorTests-rescue A3
 U 1 1 5F4AF334
 P 6350 3900
 F 0 "A3" H 6350 4200 50  0000 C CNN
@@ -158,7 +158,7 @@ F 3 "" H 6350 3900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L EnvironmentSensorTests-rescue:DHT-11_Board-Sensors A1
+L EnvironmentSensorTests-rescue:DHT-11_Board-Sensors-EnvironmentSensorTests-rescue A1
 U 1 1 5F4AA930
 P 3650 3800
 F 0 "A1" H 4050 4100 50  0000 L CNN

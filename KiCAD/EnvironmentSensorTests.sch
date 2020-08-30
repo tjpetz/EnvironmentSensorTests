@@ -93,17 +93,6 @@ Wire Wire Line
 	6100 4050 6200 4050
 NoConn ~ 6850 4000
 NoConn ~ 6850 3800
-$Comp
-L EnvironmentSensorTests-rescue:SSD1306_128x64_OLED-Sensors-EnvironmentSensorTests-rescue A4
-U 1 1 5F49AE1E
-P 7850 3850
-F 0 "A4" H 7750 4100 50  0000 L CNN
-F 1 "SSD1306_128x64_OLED" H 8100 3450 50  0000 L CNN
-F 2 "Sensors:SSD1306_128x64_OLED_Display" H 7850 3850 50  0001 C CNN
-F 3 "" H 7850 3850 50  0001 C CNN
-	1    7850 3850
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	8000 3550 8000 3100
 Wire Wire Line
@@ -146,28 +135,6 @@ Text Notes 950  1250 0    50   ~ 0
 The purpose of this circuit is to allow a comparison of the humidty and temperature sensors between the on-board HTS-221, an Analog Devices ADT7410 Temperature Sensor and a DHT-11 temperature and humidity sensor.
 NoConn ~ 6100 3950
 NoConn ~ 6100 4050
-$Comp
-L EnvironmentSensorTests-rescue:AdaFruit_ADT7410_Board-Sensors-EnvironmentSensorTests-rescue A3
-U 1 1 5F4AF334
-P 6350 3900
-F 0 "A3" H 6350 4200 50  0000 C CNN
-F 1 "AdaFruit_ADT7410_Board" H 7050 4250 50  0000 C CNN
-F 2 "Sensors:AdaFruit_ADS7410_Board" H 6350 3900 50  0001 C CNN
-F 3 "" H 6350 3900 50  0001 C CNN
-	1    6350 3900
-	1    0    0    -1  
-$EndComp
-$Comp
-L EnvironmentSensorTests-rescue:DHT-11_Board-Sensors-EnvironmentSensorTests-rescue A1
-U 1 1 5F4AA930
-P 3650 3800
-F 0 "A1" H 4050 4100 50  0000 L CNN
-F 1 "DHT-11_Board" H 3300 3500 50  0000 L CNN
-F 2 "" H 3650 3800 50  0001 C CNN
-F 3 "" H 3650 3800 50  0001 C CNN
-	1    3650 3800
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	3800 3850 4000 3850
 Wire Wire Line
@@ -194,4 +161,37 @@ Wire Wire Line
 Connection ~ 4800 3100
 Wire Wire Line
 	4800 3100 6550 3100
+$Comp
+L zzzMyParts:DHT-11_Board A?
+U 1 1 5F4C3D8C
+P 3650 3800
+F 0 "A?" H 4178 3821 50  0000 L CNN
+F 1 "DHT-11_Board" H 4178 3730 50  0000 L CNN
+F 2 "" H 3650 3800 50  0001 C CNN
+F 3 "" H 3650 3800 50  0001 C CNN
+	1    3650 3800
+	-1   0    0    -1  
+$EndComp
+$Comp
+L zzzMyParts:AdaFruit_ADT7410_Board A?
+U 1 1 5F4C550F
+P 6350 3900
+F 0 "A?" H 6525 4431 50  0000 C CNN
+F 1 "AdaFruit_ADT7410_Board" H 6525 4340 50  0000 C CNN
+F 2 "" H 6350 3900 50  0001 C CNN
+F 3 "" H 6350 3900 50  0001 C CNN
+	1    6350 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L zzzMyParts:SSD1306_128x64_OLED A?
+U 1 1 5F4C654E
+P 7850 3850
+F 0 "A?" H 8278 3846 50  0000 L CNN
+F 1 "SSD1306_128x64_OLED" H 8278 3755 50  0000 L CNN
+F 2 "" H 7850 3850 50  0001 C CNN
+F 3 "" H 7850 3850 50  0001 C CNN
+	1    7850 3850
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
