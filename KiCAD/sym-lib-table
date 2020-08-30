@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name zzzMyParts)(type Legacy)(uri ${KIPRJMOD}/MyParts.lib)(options "")(descr ""))
+  (lib (name EnvironmentSensorTests-rescue)(type Legacy)(uri ${KIPRJMOD}/EnvironmentSensorTests-rescue.lib)(options "")(descr "")(disabled))
+)

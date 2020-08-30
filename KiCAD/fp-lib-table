@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name MyParts)(type KiCad)(uri ${KIPRJMOD}/MyParts.pretty)(options "")(descr ""))
+  (lib (name Nano_33)(type KiCad)(uri ${LOCAL_SYMBOLS}/Nano_33/Nano_33.pretty)(options "")(descr ""))
+)
