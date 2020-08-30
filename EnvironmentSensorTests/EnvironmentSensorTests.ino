@@ -9,8 +9,8 @@
 #include <Adafruit_ADT7410.h>
 #include <Arduino_HTS221.h>
 #include <Adafruit_Sensor.h>
-#include <DHT.h>
-#include <DHT_U.h>
+#include "DHT.h"
+#include "DHT_U.h"
 #define NO_ADAFRUIT_SSD1306_COLOR_COMPATIBILITY
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
