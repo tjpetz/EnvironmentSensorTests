@@ -3,17 +3,19 @@
  * EnvironmentSensorTests.ino
  * 
  * A simple comparision of several different enviroment sensors.
+ * The DHT11 sensor uses the Timer class available in mbed OS
+ * to get a timer with a greater precision than the default on 
+ * the Nano 33 BLE Sense.
  * 
  */
  
 #include <Adafruit_ADT7410.h>
 #include <Arduino_HTS221.h>
 #include <Adafruit_Sensor.h>
-#include "DHT.h"
-#include "DHT_U.h"
 #define NO_ADAFRUIT_SSD1306_COLOR_COMPATIBILITY
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
+#include "mbedDHT11.h"
 
 #define DHTPIN 2     // Digital pin connected to the DHT sensor 
 
@@ -21,7 +23,7 @@
 Adafruit_ADT7410 tempsensor = Adafruit_ADT7410();
 
 // DHT11
-DHT_Unified dht(DHTPIN, DHT11);
+mbedDHT11 mbedSensor(P1_11);
 
 // the OLED display
 Adafruit_SSD1306 display(128, 64);
@@ -32,17 +34,15 @@ void setup() {
   Serial.begin(115200);
   delay(1500);
   
-//  if (!HTS.begin()) {
-//    Serial.println("Error initializing HTS sensor\n");
-//    while (1);
-//  }
+  if (!HTS.begin()) {
+    Serial.println("Error initializing HTS sensor\n");
+    while (1);
+  }
 
   if (!tempsensor.begin()) {
     Serial.println("Couldn't find ADT7410!");
     while (1);
   }
-
-  dht.begin();
 
   if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
     Serial.println("Error initializing OLED display\n");
@@ -53,17 +53,15 @@ void setup() {
 }
 
 void loop() {
-  sensors_event_t event;
   float hts_temp, hts_humidity, adt_temp, dht_temp, dht_humidity;
   char hts_out[64], adt_out[64], dht_out[64];
   
-  hts_temp = 0; // HTS.readTemperature();
-  hts_humidity = 0; // HTS.readHumidity();
+  hts_temp = HTS.readTemperature();
+  hts_humidity = HTS.readHumidity();
   adt_temp = tempsensor.readTempC();
-  dht.temperature().getEvent(&event);
-  dht_temp = event.temperature;
-  dht.humidity().getEvent(&event);
-  dht_humidity = event.relative_humidity;
+  mbedSensor.readSensor();
+  dht_temp = mbedSensor.temperature();
+  dht_humidity = mbedSensor.humidity();
   
   snprintf(hts_out, 64, "HTS: %0.2f, %0.2f", hts_temp, hts_humidity);
   snprintf(adt_out, 64, "ADT: %0.2f", adt_temp);
