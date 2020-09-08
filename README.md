@@ -14,7 +14,7 @@ The KiCAD folder includes a simple schematic showing the hookup of the circuit.
 
 ## DHT11 Sensor usage on a Nano 33 BLE Sense
 
-The AdaFruit [DHT-Sensor-Libary](https://github.com/adafruit/DHT-sensor-library) and
+The AdaFruit [DHT-Sensor-Library](https://github.com/adafruit/DHT-sensor-library) and
 the [SimpleDHT](https://github.com/winlinvip/SimpleDHT) libraries for the DHT11 sensor
 do not work out of the box on the Nano 33 BLE Sense.
 
